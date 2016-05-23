@@ -1,0 +1,1888 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Twixel</name>
+    </assembly>
+    <members>
+        <member name="T:TwixelAPI.Badge">
+            <summary>
+            Badge object
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.Badge.name">
+            <summary>
+            Badge name
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.Badge.links">
+            <summary>
+            Badge image links
+            </summary>
+        </member>
+        <member name="M:TwixelAPI.Badge.#ctor(System.String,Newtonsoft.Json.Linq.JObject,TwixelAPI.Twixel.APIVersion,Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            Badge constructor
+            </summary>
+            <param name="name">Badge name</param>
+            <param name="linksO">Badge image links</param>
+            <param name="version">Twitch API version</param>
+            <param name="baseLinksO">Base links JSON object</param>
+        </member>
+        <member name="T:TwixelAPI.Block">
+            <summary>
+            Block object
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.Block.updatedAt">
+            <summary>
+            Last updated
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.Block.id">
+            <summary>
+            Block ID
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.Block.user">
+            <summary>
+            User that is blocked
+            </summary>
+        </member>
+        <member name="M:TwixelAPI.Block.#ctor(System.String,System.Int64,Newtonsoft.Json.Linq.JObject,TwixelAPI.Twixel.APIVersion,Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            Block constructor
+            </summary>
+            <param name="updatedAt">Last updated at as a string</param>
+            <param name="id">Block ID</param>
+            <param name="userO">User JSON object</param>
+            <param name="version">Twitch API version</param>
+            <param name="baseLinksO">Base links JSON object</param>
+        </member>
+        <member name="T:TwixelAPI.Channel">
+            <summary>
+            Channel object
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.Channel.mature">
+            <summary>
+            Mature status
+            v2/v3
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.Channel.status">
+            <summary>
+            Status
+            v2/v3
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.Channel.broadcasterLanguageString">
+            <summary>
+            Broadcaster language as a string
+            v3
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.Channel.broadcasterLanguage">
+            <summary>
+            Broadcaster language
+            v3
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.Channel.displayName">
+            <summary>
+            Display name
+            v2/v3
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.Channel.game">
+            <summary>
+            Current game, can be null
+            v2/v3
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.Channel.delay">
+            <summary>
+            Current delay
+            Partnered channels can have non 0 delay
+            v3
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.Channel.languageString">
+            <summary>
+            Language string
+            v3
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.Channel.language">
+            <summary>
+            Language
+            v3
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.Channel.id">
+            <summary>
+            ID
+            v2/v3
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.Channel.name">
+            <summary>
+            Name
+            v2/v3
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.Channel.createdAt">
+            <summary>
+            Creation date
+            v2/v3
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.Channel.updatedAt">
+            <summary>
+            Last updated
+            v2/v3
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.Channel.logo">
+            <summary>
+            Logo
+            v2
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.Channel.banner">
+            <summary>
+            Banner
+            v2/v3
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.Channel.videoBanner">
+            <summary>
+            Video banner
+            v2/v3
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.Channel.background">
+            <summary>
+            Background
+            v2/v3
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.Channel.profileBanner">
+            <summary>
+            Profile banner
+            v3
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.Channel.profileBannerBackgroundColor">
+            <summary>
+            Profile banner background color
+            v3
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.Channel.partner">
+            <summary>
+            Twitch partnership status
+            v3
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.Channel.url">
+            <summary>
+            Link to channel
+            v2/v3
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.Channel.views">
+            <summary>
+            Number of views
+            v3
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.Channel.followers">
+            <summary>
+            Number of followers
+            v3
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.Channel.teams">
+            <summary>
+            Teams this channel is a part of
+            v2
+            </summary>
+        </member>
+        <member name="M:TwixelAPI.Channel.#ctor(System.Nullable{System.Boolean},System.String,System.String,System.String,System.Int64,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,Newtonsoft.Json.Linq.JArray,Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            Channel constructor, Twitch API v2
+            </summary>
+            <param name="mature">Mature status</param>
+            <param name="status">Status</param>
+            <param name="displayName">Display name</param>
+            <param name="game">Current game, can be null</param>
+            <param name="id">ID</param>
+            <param name="name">Name</param>
+            <param name="createdAt">Creation date</param>
+            <param name="updatedAt">Last updated</param>
+            <param name="logo">Logo</param>
+            <param name="banner">Banner</param>
+            <param name="videoBanner">Video banner</param>
+            <param name="background">Background</param>
+            <param name="url">Link to channel</param>
+            <param name="teamsA">Teams JSON object</param>
+            <param name="baseLinksO">Base links JSON object</param>
+        </member>
+        <member name="M:TwixelAPI.Channel.#ctor(System.Nullable{System.Boolean},System.String,System.String,System.String,System.String,System.Nullable{System.Int32},System.String,System.Int64,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Nullable{System.Boolean},System.String,System.Nullable{System.Int64},System.Nullable{System.Int64},Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            Channel constructor, Twitch API v3
+            </summary>
+            <param name="mature">Mature status</param>
+            <param name="status">Status</param>
+            <param name="broadcasterLanguage">Broadcaster language</param>
+            <param name="displayName">Display name</param>
+            <param name="game">Current game, can be null</param>
+            <param name="delay">Current delay</param>
+            <param name="language">Language</param>
+            <param name="id">ID</param>
+            <param name="name">Name</param>
+            <param name="createdAt">Creation date</param>
+            <param name="updatedAt">Last updated</param>
+            <param name="logo">Logo</param>
+            <param name="banner">Banner</param>
+            <param name="videoBanner">Video banner</param>
+            <param name="background">Background</param>
+            <param name="profileBanner">Profile banner</param>
+            <param name="profileBannerBackgroundColor">Profile banner background color</param>
+            <param name="partner">Twitch partnership status</param>
+            <param name="url">Link to channel</param>
+            <param name="views">Number of views</param>
+            <param name="followers">Number of followers</param>
+            <param name="baseLinksO">Base links JSON object</param>
+        </member>
+        <member name="T:TwixelAPI.Follow`1">
+            <summary>
+            Follow object
+            </summary>
+            <typeparam name="T">Wrapped object, usually either User or Channel object</typeparam>
+        </member>
+        <member name="F:TwixelAPI.Follow`1.createdAt">
+            <summary>
+            Creation date
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.Follow`1.notifications">
+            <summary>
+            Notification status
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.Follow`1.wrapped">
+            <summary>
+            Wrapped object, usually either User or Channel object
+            </summary>
+        </member>
+        <member name="M:TwixelAPI.Follow`1.#ctor(System.String,System.Boolean,`0,TwixelAPI.Twixel.APIVersion,Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            Follow constructor
+            </summary>
+            <param name="createdAt">Creation date</param>
+            <param name="notifications">Notification status</param>
+            <param name="t">Wrapped object</param>
+            <param name="version">Twitch API version</param>
+            <param name="baseLinksO">Base links JSON object</param>
+        </member>
+        <member name="T:TwixelAPI.HelperMethods">
+            <summary>
+            Contains helpful methods
+            </summary>
+        </member>
+        <member name="M:TwixelAPI.HelperMethods.RemoveHtmlTags(System.String)">
+            <summary>
+            Remove HTML tags from string using char array.
+            </summary>
+            <param name="source">A string</param>
+            <remarks>Taken from http://www.dotnetperls.com/remove-html-tags </remarks>
+            <returns>A string</returns>
+        </member>
+        <member name="M:TwixelAPI.HelperMethods.ConvertAmp(System.String)">
+            <summary>
+            <![CDATA[Replaces all instances of &amp; with &]]>
+            </summary>
+            <param name="source">A string</param>
+            <returns>A string</returns>
+        </member>
+        <member name="T:TwixelAPI.Ingest">
+            <summary>
+            Ingets object
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.Ingest.name">
+            <summary>
+            Name
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.Ingest.defaultIngest">
+            <summary>
+            Default status
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.Ingest.id">
+            <summary>
+            ID
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.Ingest.urlTemplate">
+            <summary>
+            Url template.
+            By directing an RTMP stream with a stream key injected into {stream_key}, you will broadcast content live on Twitch.
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.Ingest.avalibility">
+            <summary>
+            Availability
+            </summary>
+        </member>
+        <member name="M:TwixelAPI.Ingest.#ctor(System.String,System.Boolean,System.Int64,System.String,System.Double,TwixelAPI.Twixel.APIVersion,Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            Ingest constructor
+            </summary>
+            <param name="name">Name</param>
+            <param name="defaultIngest">Default status</param>
+            <param name="id">ID</param>
+            <param name="urlTemplate">Url template</param>
+            <param name="avalibility">Availability</param>
+            <param name="version">Twitch API version</param>
+            <param name="baseLinksO">Base links JSON object</param>
+        </member>
+        <member name="T:TwixelAPI.Subscription`1">
+            <summary>
+            Subscription object
+            </summary>
+            <typeparam name="T">Wrapped object, usually either User or Channel object</typeparam>
+        </member>
+        <member name="F:TwixelAPI.Subscription`1.id">
+            <summary>
+            ID
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.Subscription`1.createdAt">
+            <summary>
+            Creation date
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.Subscription`1.wrapped">
+            <summary>
+            Wrapped object, usually either User or Channel object
+            </summary>
+        </member>
+        <member name="M:TwixelAPI.Subscription`1.#ctor(System.String,System.String,`0,TwixelAPI.Twixel.APIVersion,Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            Subscription constructor
+            </summary>
+            <param name="createdAt">Creation date</param>
+            <param name="id">ID</param>
+            <param name="t">Wrapped object</param>
+            <param name="version">Twitch API version</param>
+            <param name="baseLinksO">Base links JSON object</param>
+        </member>
+        <member name="T:TwixelAPI.Total`1">
+            <summary>
+            Total object
+            </summary>
+            <typeparam name="T">Wrapped object</typeparam>
+        </member>
+        <member name="F:TwixelAPI.Total`1.total">
+            <summary>
+            Total number of objects, not just in wrapped
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.Total`1.wrapped">
+            <summary>
+            Wrapped object
+            </summary>
+        </member>
+        <member name="M:TwixelAPI.Total`1.#ctor(System.Nullable{System.Int64},`0,TwixelAPI.Twixel.APIVersion,Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            Total constructor
+            </summary>
+            <param name="total">Total number of objects</param>
+            <param name="t">Wrapped object</param>
+            <param name="version">Twitch API version</param>
+            <param name="baseLinksO">Base links JSON object</param>
+        </member>
+        <member name="T:TwixelAPI.Constants.TwitchConstants">
+            <summary>
+            Contains Twitch constants
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.Constants.TwitchConstants.baseUrl">
+            <summary>
+            Base URL
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.Constants.TwitchConstants.twitchAPIErrorString">
+            <summary>
+            General Twitch API error
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.Constants.TwitchConstants.v2UnsupportedErrorString">
+            <summary>
+            Twitch API v2 unsupported method error
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.Constants.TwitchConstants.unknownErrorString">
+            <summary>
+            Unknown error
+            </summary>
+        </member>
+        <member name="T:TwixelAPI.Constants.TwitchConstants.Scope">
+            <summary>
+            Scopes
+            </summary>
+        </member>
+        <member name="T:TwixelAPI.Constants.TwitchConstants.Period">
+            <summary>
+            Time periods
+            </summary>
+        </member>
+        <member name="T:TwixelAPI.Constants.TwitchConstants.Direction">
+            <summary>
+            Sort directions
+            </summary>
+        </member>
+        <member name="T:TwixelAPI.Constants.TwitchConstants.SortBy">
+            <summary>
+            Sort types
+            </summary>
+        </member>
+        <member name="T:TwixelAPI.Constants.TwitchConstants.CommercialLength">
+            <summary>
+            Commercial lengths
+            </summary>
+        </member>
+        <member name="M:TwixelAPI.Constants.TwitchConstants.ScopeToString(TwixelAPI.Constants.TwitchConstants.Scope)">
+            <summary>
+            Converts a scope to a string representation of that scope
+            </summary>
+            <param name="scope">Scope</param>
+            <returns>A string representation of the given scope</returns>
+        </member>
+        <member name="M:TwixelAPI.Constants.TwitchConstants.ListOfScopesToStringOfScopes(System.Collections.Generic.List{TwixelAPI.Constants.TwitchConstants.Scope})">
+            <summary>
+            Converts a list of scopes to a string of scopes each seperated by spaces
+            </summary>
+            <param name="scopes">List of scopes</param>
+            <returns>A string of scopes</returns>
+        </member>
+        <member name="M:TwixelAPI.Constants.TwitchConstants.StringToScope(System.String)">
+            <summary>
+            Converts a string representation of a scope to a scope
+            </summary>
+            <param name="scope">String representation of a scope</param>
+            <returns>A scope</returns>
+        </member>
+        <member name="M:TwixelAPI.Constants.TwitchConstants.StringOfScopesToListOfScopes(System.String)">
+            <summary>
+            Converts a string of scopes which are seperated by spaces to a list of scopes
+            </summary>
+            <param name="scopes">String of scopes seperated by spaces</param>
+            <returns>A list of scopes</returns>
+        </member>
+        <member name="M:TwixelAPI.Constants.TwitchConstants.PeriodToString(TwixelAPI.Constants.TwitchConstants.Period)">
+            <summary>
+            Converts a period to a string representation of that period
+            </summary>
+            <param name="period">Period</param>
+            <returns>A string representation of the given period</returns>
+        </member>
+        <member name="M:TwixelAPI.Constants.TwitchConstants.StringToPeriod(System.String)">
+            <summary>
+            Converts a string representation of a period to a period
+            </summary>
+            <param name="period">String representation of a period</param>
+            <returns>A period</returns>
+        </member>
+        <member name="M:TwixelAPI.Constants.TwitchConstants.DirectionToString(TwixelAPI.Constants.TwitchConstants.Direction)">
+            <summary>
+            Converts a direction to a string representation of a direction
+            </summary>
+            <param name="direction">Direction</param>
+            <returns>String representation of a direction</returns>
+        </member>
+        <member name="M:TwixelAPI.Constants.TwitchConstants.StringToDirection(System.String)">
+            <summary>
+            Converts a string representation of a direction to a direction
+            </summary>
+            <param name="direction">String representation of a direction</param>
+            <returns>A direction</returns>
+        </member>
+        <member name="M:TwixelAPI.Constants.TwitchConstants.SortByToString(TwixelAPI.Constants.TwitchConstants.SortBy)">
+            <summary>
+            Converts a sort by to a string representation of a sort by
+            </summary>
+            <param name="sortBy">A sort by</param>
+            <returns>String representation of a sort by</returns>
+        </member>
+        <member name="M:TwixelAPI.Constants.TwitchConstants.StringToSortBy(System.String)">
+            <summary>
+            Converts a string representation of a sort by to a sort by
+            </summary>
+            <param name="sortBy">String representation of a sort by</param>
+            <returns>A sort by</returns>
+        </member>
+        <member name="M:TwixelAPI.Constants.TwitchConstants.LengthToInt(TwixelAPI.Constants.TwitchConstants.CommercialLength)">
+            <summary>
+            Converts a commercial length to a number
+            </summary>
+            <param name="length">Commercial length</param>
+            <returns>A number</returns>
+        </member>
+        <member name="M:TwixelAPI.Constants.TwitchConstants.IntToLength(System.Int32)">
+            <summary>
+            Converts a number to a commercial length
+            </summary>
+            <param name="length">A number</param>
+            <returns>A commercial length</returns>
+        </member>
+        <member name="T:TwixelAPI.Emoticon">
+            <summary>
+            Emoticon object
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.Emoticon.regex">
+            <summary>
+            Regex
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.Emoticon.emoticonImages">
+            <summary>
+            List of emoticon images
+            </summary>
+        </member>
+        <member name="M:TwixelAPI.Emoticon.#ctor(System.String,Newtonsoft.Json.Linq.JArray,TwixelAPI.Twixel.APIVersion,Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            Emoticon constructor
+            </summary>
+            <param name="regex">Regex</param>
+            <param name="imagesA">Emoticon images JSON object</param>
+            <param name="version">Twitch API version</param>
+            <param name="baseLinksO">Base links JSON object</param>
+        </member>
+        <member name="T:TwixelAPI.EmoticonImage">
+            <summary>
+            EmoticonImage object
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.EmoticonImage.emoticonSet">
+            <summary>
+            Emoticon set.
+            If null emoticon is part of the default Twitch set.
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.EmoticonImage.height">
+            <summary>
+            Height in pixels
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.EmoticonImage.width">
+            <summary>
+            Width in pixels
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.EmoticonImage.url">
+            <summary>
+            Link to image
+            </summary>
+        </member>
+        <member name="M:TwixelAPI.EmoticonImage.#ctor(System.Nullable{System.Int32},System.Int32,System.Int32,System.String)">
+            <summary>
+            EmoticonImage constructor
+            </summary>
+            <param name="emoticonSet">Emoticon set</param>
+            <param name="height">Height in pixels</param>
+            <param name="width">Width in pixels</param>
+            <param name="url">Link to image</param>
+        </member>
+        <member name="T:TwixelAPI.FeaturedStream">
+            <summary>
+            FeaturedStream object
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.FeaturedStream.text">
+            <summary>
+            Description text.
+            Contains HTML tags by default.
+            v2/v3
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.FeaturedStream.image">
+            <summary>
+            Link to image
+            v2/v3
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.FeaturedStream.title">
+            <summary>
+            Title
+            v3
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.FeaturedStream.sponsored">
+            <summary>
+            Sponsored status
+            v3
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.FeaturedStream.priority">
+            <summary>
+            Priority
+            v3
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.FeaturedStream.scheduled">
+            <summary>
+            Scheduled status
+            v3
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.FeaturedStream.stream">
+            <summary>
+            Stream object
+            v2/v3
+            </summary>
+        </member>
+        <member name="M:TwixelAPI.FeaturedStream.#ctor(System.String,System.String,Newtonsoft.Json.Linq.JObject,Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            FeaturedStream constructor, Twitch API v2
+            </summary>
+            <param name="text">Description text</param>
+            <param name="image">Link to image</param>
+            <param name="streamO">Stream JSON object</param>
+            <param name="baseLinksO">Base links JSON object</param>
+        </member>
+        <member name="M:TwixelAPI.FeaturedStream.#ctor(System.String,System.String,System.String,System.Boolean,System.Int32,System.Boolean,Newtonsoft.Json.Linq.JObject,Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            FeaturedStream constructor, Twitch API v3
+            </summary>
+            <param name="text">Description text</param>
+            <param name="image">Link to image</param>
+            <param name="title">Title</param>
+            <param name="sponsored">Sponsored status</param>
+            <param name="priority">Priority</param>
+            <param name="scheduled">Scheduled status</param>
+            <param name="streamO">Stream JSON object</param>
+            <param name="baseLinksO">Base links JSON object</param>
+        </member>
+        <member name="M:TwixelAPI.FeaturedStream.CleanTextString">
+            <summary>
+            Remove HTML tags and HTML decode info string
+            </summary>
+        </member>
+        <member name="T:TwixelAPI.Game">
+            <summary>
+            Game object
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.Game.viewers">
+            <summary>
+            Number of viewers.
+            Null if game was searched.
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.Game.channels">
+            <summary>
+            Number of channels.
+            Null if game was searched
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.Game.name">
+            <summary>
+            Name
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.Game.id">
+            <summary>
+            ID
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.Game.giantBombId">
+            <summary>
+            GiantBomb ID
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.Game.box">
+            <summary>
+            Box image links.
+            Dictionary strings: small, medium, large, template
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.Game.logo">
+            <summary>
+            Logo image links.
+            Dictionary strings: small, medium, large, template
+            </summary>
+        </member>
+        <member name="M:TwixelAPI.Game.#ctor(System.Nullable{System.Int64},System.Nullable{System.Int64},System.String,System.Nullable{System.Int64},System.Nullable{System.Int64},Newtonsoft.Json.Linq.JObject,Newtonsoft.Json.Linq.JObject,TwixelAPI.Twixel.APIVersion,Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            Game constructor
+            </summary>
+            <param name="viewers">Number of viewers</param>
+            <param name="channels">Number of channels</param>
+            <param name="name">Name</param>
+            <param name="id">ID</param>
+            <param name="giantBombId">GiantBomb ID</param>
+            <param name="boxO">Box JSON object</param>
+            <param name="logoO">Logo JSON object</param>
+            <param name="version">Twitch API version</param>
+            <param name="baseLinksO">Base links JSON object</param>
+        </member>
+        <member name="T:TwixelAPI.SearchedGame">
+            <summary>
+            SearchedGame object
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.SearchedGame.popularity">
+            <summary>
+            Popularity
+            </summary>
+        </member>
+        <member name="M:TwixelAPI.SearchedGame.#ctor(System.String,System.Nullable{System.Int64},System.Nullable{System.Int64},System.Nullable{System.Int64},Newtonsoft.Json.Linq.JObject,Newtonsoft.Json.Linq.JObject,TwixelAPI.Twixel.APIVersion,Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            SearchedGame constructor
+            </summary>
+            <param name="name">Name</param>
+            <param name="popularity">Popularity</param>
+            <param name="id">ID</param>
+            <param name="giantBombId">GiantBomb ID</param>
+            <param name="boxO">Box JSON object</param>
+            <param name="logoO">Logo JSON object</param>
+            <param name="version">Twitch API version</param>
+            <param name="baseLinksO">Base links JSON object</param>
+        </member>
+        <member name="T:TwixelAPI.Stream">
+            <summary>
+            Stream object
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.Stream.id">
+            <summary>
+            ID
+            v2/v3
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.Stream.game">
+            <summary>
+            Current game, can be null
+            v2/v3
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.Stream.viewers">
+            <summary>
+            Number of viewers
+            v2/v3
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.Stream.createdAt">
+            <summary>
+            Creation date
+            v2/v3
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.Stream.videoHeight">
+            <summary>
+            Video height
+            v2/v3
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.Stream.averageFps">
+            <summary>
+            Average FPS
+            v2/v3
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.Stream.name">
+            <summary>
+            Name
+            v2/v3
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.Stream.broadcaster">
+            <summary>
+            Broadcaster software used
+            v2/v3
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.Stream.preview">
+            <summary>
+            Link to preview image
+            v2
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.Stream.previewList">
+            <summary>
+            Link to preview images
+            Dictionary strings: small, medium, large, template
+            v3
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.Stream.channel">
+            <summary>
+            Channel object
+            v2/v3
+            </summary>
+        </member>
+        <member name="M:TwixelAPI.Stream.#ctor(System.Nullable{System.Int64},System.String,System.Nullable{System.Int64},System.String,System.Nullable{System.Int32},System.Nullable{System.Double},System.String,System.String,System.String,Newtonsoft.Json.Linq.JObject,Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            Stream constructor, Twitch API v2
+            </summary>
+            <param name="id">ID</param>
+            <param name="game">Current game, can be null</param>
+            <param name="viewers">Number of viewers</param>
+            <param name="createdAt">Creation date</param>
+            <param name="videoHeight">Video height</param>
+            <param name="averageFps">Average FPS</param>
+            <param name="name">Name</param>
+            <param name="broadcaster">Broadcaster softare used</param>
+            <param name="preview">Link to preview image</param>
+            <param name="channelO">Channel JSON object</param>
+            <param name="baseLinksO">Base links JSON object</param>
+        </member>
+        <member name="M:TwixelAPI.Stream.#ctor(System.Nullable{System.Int64},System.String,System.Nullable{System.Int64},System.String,System.Int32,System.Double,System.String,System.String,Newtonsoft.Json.Linq.JObject,Newtonsoft.Json.Linq.JObject,Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            Stream constructor, Twitch API v3
+            </summary>
+            <param name="id">ID</param>
+            <param name="game">Current game, can be null</param>
+            <param name="viewers">Number of viewers</param>
+            <param name="createdAt">Creation date</param>
+            <param name="videoHeight">Video height</param>
+            <param name="averageFps">Average FPS</param>
+            <param name="name">Name</param>
+            <param name="broadcaster">Broadcaster softare used</param>
+            <param name="previewO">Preview JSON object</param>
+            <param name="channelO">Channel JSON object</param>
+            <param name="baseLinksO">Base links JSON object</param>
+        </member>
+        <member name="T:TwixelAPI.Team">
+            <summary>
+            Team object
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.Team.id">
+            <summary>
+            ID
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.Team.name">
+            <summary>
+            Name
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.Team.info">
+            <summary>
+            Info.
+            Contains HTML tags by default.
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.Team.displayName">
+            <summary>
+            Display name
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.Team.createdAt">
+            <summary>
+            Creation date
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.Team.updatedAt">
+            <summary>
+            Last updated
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.Team.logo">
+            <summary>
+            Link to logo
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.Team.banner">
+            <summary>
+            Link to banner
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.Team.background">
+            <summary>
+            Link to background
+            </summary>
+        </member>
+        <member name="M:TwixelAPI.Team.#ctor(System.Int64,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,TwixelAPI.Twixel.APIVersion,Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            Team constructor
+            </summary>
+            <param name="id">ID</param>
+            <param name="name">Name</param>
+            <param name="info">Info</param>
+            <param name="displayName">Display name</param>
+            <param name="createdAt">Creation date</param>
+            <param name="updatedAt">Last updated</param>
+            <param name="logo">Link to logo</param>
+            <param name="banner">Link to banner</param>
+            <param name="background">Link to background</param>
+            <param name="version">Twitch API version</param>
+            <param name="baseLinksO">Base links JSON object</param>
+        </member>
+        <member name="M:TwixelAPI.Team.CleanInfoString">
+            <summary>
+            Remove HTML tags and HTML decode info string
+            </summary>
+        </member>
+        <member name="T:TwixelAPI.TwitchException">
+            <summary>
+            Twitch exception
+            </summary>
+        </member>
+        <member name="P:TwixelAPI.TwitchException.Error">
+            <summary>
+            Twitch error
+            </summary>
+        </member>
+        <member name="P:TwixelAPI.TwitchException.Status">
+            <summary>
+            HTTP error code
+            </summary>
+        </member>
+        <member name="M:TwixelAPI.TwitchException.#ctor(Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            TwitchException constructor
+            </summary>
+            <param name="errorO">Error JSON object</param>
+        </member>
+        <member name="T:TwixelAPI.TwixelObjectBase">
+            <summary>
+            TwixelObjectBase object.
+            All Twixel objects (except for Emoticons) derive from this.
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.TwixelObjectBase.version">
+            <summary>
+            Twitch API version that was used to create this object
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.TwixelObjectBase.baseLinks">
+            <summary>
+            Base links
+            </summary>
+        </member>
+        <member name="M:TwixelAPI.TwixelObjectBase.#ctor(Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            TwixelObjectBase constructor
+            </summary>
+            <param name="baseLinksO">Base links JSON object</param>
+        </member>
+        <member name="T:TwixelAPI.Twixel">
+            <summary>
+            Twixel class
+            </summary>
+        </member>
+        <member name="T:TwixelAPI.Twixel.APIVersion">
+            <summary>
+            The enum of available API versions
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.Twixel.APIVersion.v2">
+            <summary>
+            Version 2 of the API
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.Twixel.APIVersion.v3">
+            <summary>
+            Version 3 of the API
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.Twixel.APIVersion.None">
+            <summary>
+            Not a valid version
+            </summary>
+        </member>
+        <member name="T:TwixelAPI.Twixel.RequestType">
+            <summary>
+            Request types
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.Twixel.clientID">
+            <summary>
+            Your client ID
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.Twixel.redirectUrl">
+            <summary>
+            Your redirect URL
+            </summary>
+        </member>
+        <member name="P:TwixelAPI.Twixel.DefaultVersion">
+            <summary>
+            The default version that gets sent to the API
+            </summary>
+        </member>
+        <member name="M:TwixelAPI.Twixel.#ctor(System.String,System.String)">
+            <summary>
+            Default Twixel constructor, sets API version to v3
+            </summary>
+            <param name="id">Your client ID</param>
+            <param name="secret">Your client secret</param>
+            <param name="url">Your redirect URL, should not have / at end</param>
+        </member>
+        <member name="M:TwixelAPI.Twixel.#ctor(System.String,System.String,TwixelAPI.Twixel.APIVersion)">
+            <summary>
+            Twixel constructor
+            </summary>
+            <param name="id">Your client ID</param>
+            <param name="url">Your redirect URL, should not have / at end</param>
+            <param name="defaultVersion">The API version you want to use</param>
+        </member>
+        <member name="M:TwixelAPI.Twixel.RetrieveChannel(System.String,TwixelAPI.Twixel.APIVersion)">
+            <summary>
+            Gets the channel of the specified user.
+            </summary>
+            <param name="name">The name of the user</param>
+            <param name="version">Twitch API version</param>
+            <returns>A channel</returns>
+        </member>
+        <member name="M:TwixelAPI.Twixel.RetrieveTeams(System.String,TwixelAPI.Twixel.APIVersion)">
+            <summary>
+            Retrieve teams the specified user is a member of.
+            </summary>
+            <param name="user">The name of the user</param>
+            <param name="version">Twitch API version</param>
+            <returns>List of teams</returns>
+        </member>
+        <member name="M:TwixelAPI.Twixel.RetrieveChat(System.String,TwixelAPI.Twixel.APIVersion)">
+            <summary>
+            Gets the chat URL's for the specified user
+            </summary>
+            <param name="user">The name of the user</param>
+            <param name="version">Twitch API version</param>
+            <returns>A dictionary of links</returns>
+        </member>
+        <member name="M:TwixelAPI.Twixel.RetrieveEmoticons(TwixelAPI.Twixel.APIVersion)">
+            <summary>
+            Gets the list of emoticons on Twitch
+            </summary>
+            <param name="version">Twitch API version</param>
+            <returns>Returns a list of emoticons</returns>
+        </member>
+        <member name="M:TwixelAPI.Twixel.RetrieveBadges(System.String,TwixelAPI.Twixel.APIVersion)">
+            <summary>
+            Gets the list of badges that can be used in the specified user's channel
+            </summary>
+            <param name="user">The name of the user</param>
+            <param name="version">Twitch API version</param>
+            <returns>List of badges</returns>
+        </member>
+        <member name="M:TwixelAPI.Twixel.RetrieveTopGames(System.Int32,System.Int32,TwixelAPI.Twixel.APIVersion)">
+            <summary>
+            Gets top games on Twitch.
+            </summary>
+            <param name="offset">Object offset for pagination. Default is 0.</param>
+            <param name="limit">How many streams to get at one time. Default is 25. Maximum is 100</param>
+            <param name="version">Twitch API version</param>
+            <returns>A Total object containing a list of games</returns>
+        </member>
+        <member name="M:TwixelAPI.Twixel.RetrieveIngests(TwixelAPI.Twixel.APIVersion)">
+            <summary>
+            Gets the list of RTMP ingest points
+            </summary>
+            <param name="version">Twitch API version</param>
+            <returns>A list of ingests</returns>
+        </member>
+        <member name="M:TwixelAPI.Twixel.SearchChannels(System.String,System.Int32,System.Int32,TwixelAPI.Twixel.APIVersion)">
+            <summary>
+            Search channels on Twitch. Twitch API v3 only.
+            </summary>
+            <param name="query">The search query</param>
+            <param name="offset">Object offset for pagination. Default is 0.</param>
+            <param name="limit">How many channels to get at one time. Default is 25. Maximum is 100.</param>
+            <param name="version">Twitch API version</param>
+            <returns>A Total object containing a list of channels matching the search query</returns>
+        </member>
+        <member name="M:TwixelAPI.Twixel.SearchStreams(System.String,System.Int32,System.Int32,System.Nullable{System.Boolean},TwixelAPI.Twixel.APIVersion)">
+            <summary>
+            Search streams on Twitch
+            </summary>
+            <param name="query">The search query</param>
+            <param name="offset">Object offset for pagination. Default is 0.</param>
+            <param name="limit">How many streams to get at one time. Default is 25. Maximum is 100.</param>
+            <param name="hls">If set to true, only returns streams using HLS. If set to false, only returns streams that are non-HLS.</param>
+            <param name="version">Twitch API version</param>
+            <returns>A Total object containing a list of streams</returns>
+        </member>
+        <member name="M:TwixelAPI.Twixel.SearchGames(System.String,System.Boolean,TwixelAPI.Twixel.APIVersion)">
+            <summary>
+            Search games on Twitch
+            </summary>
+            <param name="query">The search query</param>
+            <param name="live">If true, only returns games that are live on at least one channel. Default is false.</param>
+            <param name="version">Twitch API version</param>
+            <returns>Returns a list of searched games</returns>
+        </member>
+        <member name="M:TwixelAPI.Twixel.RetrieveStream(System.String,TwixelAPI.Twixel.APIVersion)">
+            <summary>
+            Gets a live stream.
+            If the stream is offline this method will throw an exception.
+            </summary>
+            <param name="channelName">The channel stream to get.</param>
+            <param name="version">Twitch API version</param>
+            <returns>
+            Returns a stream object.
+            If the stream is offline or an error occurs this will throw an exception.
+            </returns>
+        </member>
+        <member name="M:TwixelAPI.Twixel.RetrieveStreams(System.String,System.Collections.Generic.List{System.String},System.Int32,System.Int32,System.String,TwixelAPI.Twixel.APIVersion)">
+            <summary>
+            Gets the top live streams on Twitch.
+            </summary>
+            <param name="game">The game you want streams for.</param>
+            <param name="channels">Streams from a list of channels.</param>
+            <param name="offset">Object offset for pagination. Default is 0.</param>
+            <param name="limit">How many streams to get at one time. Default is 25. Maximum is 100.</param>
+            <param name="clientId">Only show stream with this client ID. Version 3 only.</param>
+            <param name="version">Twitch API version</param>
+            <returns>A Total object containing a list of streams</returns>
+        </member>
+        <member name="M:TwixelAPI.Twixel.RetrieveFeaturedStreams(System.Int32,System.Int32,TwixelAPI.Twixel.APIVersion)">
+            <summary>
+            Gets the featured live streams on Twitch
+            </summary>
+            <param name="offset">Object offset for pagination. Default is 0.</param>
+            <param name="limit">How many featured streams to get at one time. Default is 25. Maximum is 100.</param>
+            <param name="version">Twitch API version</param>
+            <returns>Returns a list of featured streams</returns>
+        </member>
+        <member name="M:TwixelAPI.Twixel.RetrieveStreamsSummary(System.String,TwixelAPI.Twixel.APIVersion)">
+            <summary>
+            Gets a summary of live streams on Twitch
+            </summary>
+            <param name="game">Only show stats for this game</param>
+            <param name="version">Twitch API version</param>
+            <returns>A Dictionary with the first key of Viewers and the second key of Channels.</returns>
+        </member>
+        <member name="M:TwixelAPI.Twixel.RetrieveTeams(System.Int32,System.Int32,TwixelAPI.Twixel.APIVersion)">
+            <summary>
+            Gets the list of teams from Twitch
+            </summary>
+            <param name="offset">Object offset for pagination. Default is 0.</param>
+            <param name="limit">How many teams to get at one time. Default is 25. Maximum is 100.</param>
+            <param name="version">Twitch API version</param>
+            <returns>A list of teams</returns>
+        </member>
+        <member name="M:TwixelAPI.Twixel.RetrieveTeam(System.String,TwixelAPI.Twixel.APIVersion)">
+            <summary>
+            Gets a team by name
+            </summary>
+            <param name="name">The name of the team</param>
+            <param name="version">Twitch API version</param>
+            <returns>A team</returns>
+        </member>
+        <member name="M:TwixelAPI.Twixel.RetrieveUser(System.String,TwixelAPI.Twixel.APIVersion)">
+            <summary>
+            Gets a user by their name
+            </summary>
+            <param name="name">The name of the user</param>
+            <param name="version">Twitch API version</param>
+            <returns>Returns a user</returns>
+        </member>
+        <member name="M:TwixelAPI.Twixel.RetrieveUserWithAccessToken(System.String,TwixelAPI.Twixel.APIVersion)">
+            <summary>
+            Gets the status of an access token, if the token is valid this returns an
+            authorized user object
+            </summary>
+            <param name="accessToken">The access token</param>
+            <param name="version">Twitch API version</param>
+            <returns>
+            An authorized user if the request succeeds.
+            Throws an exception if the token is not valid.</returns>
+        </member>
+        <member name="M:TwixelAPI.Twixel.Login(System.Collections.Generic.List{TwixelAPI.Constants.TwitchConstants.Scope})">
+            <summary>
+            Creates a URL that can be used to authenticate a user
+            </summary>
+            <param name="scopes">The permissions you are requesting. Must contain at least one permission.</param>
+            <returns>
+            Returns a URL to be used for authenticating a user.
+            Throws an exception if the scopes list contained no scopes.
+            </returns>
+        </member>
+        <member name="M:TwixelAPI.Twixel.RetrieveVideo(System.String,TwixelAPI.Twixel.APIVersion)">
+            <summary>
+            Gets a video by ID
+            </summary>
+            <param name="id">The video ID</param>
+            <param name="version">Twitch API version</param>
+            <returns>A video</returns>
+        </member>
+        <member name="M:TwixelAPI.Twixel.RetrieveTopVideos(System.String,TwixelAPI.Constants.TwitchConstants.Period,System.Int32,System.Int32,TwixelAPI.Twixel.APIVersion)">
+            <summary>
+            Gets the top videos on Twitch
+            </summary>
+            <param name="game">The name of the game to get videos for</param>
+            <param name="period">The time period you want to look in</param>
+            <param name="offset">Object offset for pagination. Default is 0.</param>
+            <param name="limit">How many videos to get at one time. Default is 10. Maximum is 100</param>
+            <param name="version">Twitch API version</param>
+            <returns>A list of videos</returns>
+        </member>
+        <member name="M:TwixelAPI.Twixel.RetrieveVideos(System.String,System.Int32,System.Int32,System.Boolean,System.Nullable{System.Boolean},TwixelAPI.Twixel.APIVersion)">
+            <summary>
+            Gets a Total object containing a list of videos for a specified channel
+            </summary>
+            <param name="channel">The name of the channel</param>
+            <param name="offset">Object offset for pagination. Default is 0.</param>
+            <param name="limit">How many videos to get at one time. Default is 10. Maximum is 100.</param>
+            <param name="broadcasts">Returns only broadcasts when true. Otherwise only highlights are returned. Default is false.</param>
+            <param name="hls">Returns only HLS VoDs when true. Otherwise only non-HLS VoDs are returned. Default is false.</param>
+            <param name="version">Twitch API version</param>
+            <returns>A Total object containing list of videos</returns>
+        </member>
+        <member name="M:TwixelAPI.Twixel.GetWebData(System.Uri,TwixelAPI.Twixel.APIVersion)">
+            <summary>
+            Get web data.
+            </summary>
+            <param name="uri">URL</param>
+            <param name="version">Twitch API version</param>
+            <returns>A response string containing a JSON object</returns>
+        </member>
+        <member name="M:TwixelAPI.Twixel.GetWebData(System.Uri,System.String,TwixelAPI.Twixel.APIVersion)">
+            <summary>
+            Get web data with an access token.
+            </summary>
+            <param name="uri">URL</param>
+            <param name="accessToken">Access token</param>
+            <param name="version">Twitch API version</param>
+            <returns>A response string containing a JSON object</returns>
+        </member>
+        <member name="M:TwixelAPI.Twixel.PutWebData(System.Uri,System.String,System.String,TwixelAPI.Twixel.APIVersion)">
+            <summary>
+            Put web data
+            </summary>
+            <param name="uri">URL</param>
+            <param name="accessToken">Access token</param>
+            <param name="content">JSON object as a string</param>
+            <param name="version">Twitch API version</param>
+            <returns>A response string containing a JSON object</returns>
+        </member>
+        <member name="M:TwixelAPI.Twixel.PostWebData(System.Uri,System.String,System.String,TwixelAPI.Twixel.APIVersion)">
+            <summary>
+            Post web data
+            </summary>
+            <param name="uri">URL</param>
+            <param name="accessToken">Access token</param>
+            <param name="content">JSON object as a string</param>
+            <param name="version">Twitch API version</param>
+            <returns>A response string containing a JSON object</returns>
+        </member>
+        <member name="M:TwixelAPI.Twixel.DeleteWebData(System.Uri,System.String,TwixelAPI.Twixel.APIVersion)">
+            <summary>
+            Delete web data
+            </summary>
+            <param name="uri">URL</param>
+            <param name="accessToken">Access token</param>
+            <param name="version">Twitch API version</param>
+            <returns>A response string containing a JSON object</returns>
+        </member>
+        <member name="T:TwixelAPI.TwixelException">
+            <summary>
+            Twixel exception
+            </summary>
+        </member>
+        <member name="P:TwixelAPI.TwixelException.BaseLinks">
+            <summary>
+            Base links
+            </summary>
+        </member>
+        <member name="P:TwixelAPI.TwixelException.Error">
+            <summary>
+            Wrapped Twitch exception
+            </summary>
+        </member>
+        <member name="M:TwixelAPI.TwixelException.#ctor(System.String)">
+            <summary>
+            TwixelException constructor. Simple messages.
+            </summary>
+            <param name="message">Message</param>
+        </member>
+        <member name="M:TwixelAPI.TwixelException.#ctor(System.String,Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            TwixelException constructor. Message with base links.
+            </summary>
+            <param name="message">Message</param>
+            <param name="baseLinksO">Base links JSON object</param>
+        </member>
+        <member name="M:TwixelAPI.TwixelException.#ctor(System.String,TwixelAPI.TwitchException)">
+            <summary>
+            TwixelException constructor. Message with wrapped Twitch exception.
+            </summary>
+            <param name="message">Message</param>
+            <param name="error">Twitch exception</param>
+        </member>
+        <member name="T:TwixelAPI.Notification">
+            <summary>
+            Notification struct
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.Notification.email">
+            <summary>
+            Email status
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.Notification.push">
+            <summary>
+            Push status
+            </summary>
+        </member>
+        <member name="M:TwixelAPI.Notification.#ctor(System.Boolean,System.Boolean)">
+            <summary>
+            Notification constructor
+            </summary>
+            <param name="email">Email status</param>
+            <param name="push">Push status</param>
+        </member>
+        <member name="T:TwixelAPI.User">
+            <summary>
+            User class
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.User.authorized">
+            <summary>
+            Authorization status
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.User.accessToken">
+            <summary>
+            User's access token
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.User.authorizedScopes">
+            <summary>
+            List of scopes user has given permission to
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.User.name">
+            <summary>
+            Name
+            v2/v3
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.User.logo">
+            <summary>
+            Link to logo
+            v2/v3
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.User.id">
+            <summary>
+            ID
+            v2/v3
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.User.displayName">
+            <summary>
+            Display name
+            v2/v3
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.User.email">
+            <summary>
+            Email address.
+            Requires authentication.
+            Requires user_read.
+            v2/v3
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.User.staff">
+            <summary>
+            If the user is a staff member of Twitch
+            v2
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.User.type">
+            <summary>
+            Status on Twitch
+            v3
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.User.partnered">
+            <summary>
+            Partnership status.
+            Requires authentication.
+            Requires user_read.
+            v2/v3
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.User.createdAt">
+            <summary>
+            Creation date
+            v2/v3
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.User.updatedAt">
+            <summary>
+            Last updated
+            v2/v3
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.User.bio">
+            <summary>
+            Bio
+            v3
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.User.notifications">
+            <summary>
+            Notification settings
+            v2/v3
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.User.channel">
+            <summary>
+            Cached channel object.
+            Null until a retrieve or update is done on the user's channel.
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.User.streamKey">
+            <summary>
+            Stream key
+            Null until a retrieve or update is done on the user's channel.
+            </summary>
+        </member>
+        <member name="M:TwixelAPI.User.#ctor(System.String,System.Int64,System.String,System.Boolean,System.String,System.String,System.String,Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            User constructor. Unauthorized. Twitch API v2.
+            </summary>
+            <param name="displayName">Display name</param>
+            <param name="id">ID</param>
+            <param name="name">Name</param>
+            <param name="staff">Are they staff</param>
+            <param name="createdAt">Time created at</param>
+            <param name="updatedAt">Time updated at</param>
+            <param name="logo">Logo link</param>
+            <param name="baseLinksO">Base links JSON object</param>
+        </member>
+        <member name="M:TwixelAPI.User.#ctor(System.String,System.Collections.Generic.List{TwixelAPI.Constants.TwitchConstants.Scope},System.String,System.Int64,System.String,System.Boolean,System.String,System.String,System.String,System.String,System.Boolean,Newtonsoft.Json.Linq.JObject,Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            User constructor. Authorized. Twitch API v2.
+            </summary>
+            <param name="accessToken">Access token</param>
+            <param name="authorizedScopes">List of authorized scopes</param>
+            <param name="displayName">Display name</param>
+            <param name="id">ID</param>
+            <param name="name">Name</param>
+            <param name="staff">Are they staff</param>
+            <param name="createdAt">Time created at</param>
+            <param name="updatedAt">Time updated at</param>
+            <param name="logo">Logo link</param>
+            <param name="email">Email</param>
+            <param name="partnered">Are they partnered</param>
+            <param name="notificationsO">Notification status</param>
+            <param name="baseLinksO">Base links JSON object</param>
+        </member>
+        <member name="M:TwixelAPI.User.#ctor(System.String,System.Int64,System.String,System.String,System.String,System.String,System.String,System.String,Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            User constructor. Unauthorized. Twitch API v3.
+            </summary>
+            <param name="displayName">Display name</param>
+            <param name="id">ID</param>
+            <param name="name">Name</param>
+            <param name="type">Type of user</param>
+            <param name="bio">Bio</param>
+            <param name="createdAt">Time created at</param>
+            <param name="updatedAt">Time updated at</param>
+            <param name="logo">Logo link</param>
+            <param name="baseLinksO">Base links</param>
+        </member>
+        <member name="M:TwixelAPI.User.#ctor(System.String,System.Collections.Generic.List{TwixelAPI.Constants.TwitchConstants.Scope},System.String,System.Int64,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Boolean,Newtonsoft.Json.Linq.JObject,Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            User constructor. Authorized. Twitch API v3.
+            </summary>
+            <param name="accessToken">Access token</param>
+            <param name="authorizedScopes">List of authorized scopes</param>
+            <param name="displayName">Display name</param>
+            <param name="id">ID</param>
+            <param name="name">Name</param>
+            <param name="type">Type of user</param>
+            <param name="bio">Bio</param>
+            <param name="createdAt">Time created at</param>
+            <param name="updatedAt">Time updated at</param>
+            <param name="logo">Logo link</param>
+            <param name="email">Email</param>
+            <param name="partnered">Are they partnered</param>
+            <param name="notificationsO">Notification status</param>
+            <param name="baseLinksO">Base links</param>
+        </member>
+        <member name="M:TwixelAPI.User.RetrieveBlockedUsers(System.Int32,System.Int32)">
+            <summary>
+            Gets a list of users that the user has blocked.
+            Requires authorization.
+            Requires user_blocks_read.
+            </summary>
+            <param name="offset">Object offset for pagination. Default is 0.</param>
+            <param name="limit">Maximum number of objects in array. Default is 25. Maximum is 100.</param>
+            <returns>A list of blocked users</returns>
+        </member>
+        <member name="M:TwixelAPI.User.BlockUser(System.String)">
+            <summary>
+            Blocks a user.
+            Requires authorization.
+            Requires user_blocks_edit.
+            </summary>
+            <param name="username">The name of the user to block</param>
+            <returns>The blocked user</returns>
+        </member>
+        <member name="M:TwixelAPI.User.UnblockUser(System.String)">
+            <summary>
+            Unblocks a user.
+            Requires authorization.
+            Requires user_blocks_edit.
+            </summary>
+            <param name="username">The name of the user to block</param>
+            <returns>
+            Returns true if the request succeeded.
+            Throws an exception if the user was never blocked.
+            Throws an exception if the user could not be unblocked.
+            </returns>
+        </member>
+        <member name="M:TwixelAPI.User.RetrieveChannel">
+            <summary>
+            Gets the channel object for this user. Also retrieves their stream key.
+            Updates channel object.
+            Requires authorization.
+            Requires channel_read.
+            </summary>
+            <returns>A channel</returns>
+        </member>
+        <member name="M:TwixelAPI.User.RetrieveChannelEditors">
+            <summary>
+            Gets the list of users that can edit this user's channel.
+            Requires authorization.
+            Requires channel_read.
+            </summary>
+            <returns>A list of users</returns>
+        </member>
+        <member name="M:TwixelAPI.User.UpdateChannel(System.String,System.String,System.Int32)">
+            <summary>
+            Updates a channel's status.
+            Updates channel object.
+            Requires authorization.
+            Requires Twitch partnership if setting a delay above 0.
+            Requires channel_editor.
+            </summary>
+            <param name="status">The new status</param>
+            <param name="game">The new game</param>
+            <param name="delay">Delay, requires Twitch partnership if above 0</param>
+            <returns>
+            Returns the channel if the request succeeded.
+            Throws an exception if the user is not allowed to use delay.
+            </returns>
+        </member>
+        <member name="M:TwixelAPI.User.ResetStreamKey">
+            <summary>
+            Resets this user's stream key.
+            Updates channel object.
+            Requires authorization.
+            Requires channel_stream.
+            </summary>
+            <returns>The new stream key</returns>
+        </member>
+        <member name="M:TwixelAPI.User.StartCommercial(TwixelAPI.Constants.TwitchConstants.CommercialLength)">
+            <summary>
+            Starts a commercial on this user's live stream.
+            Requires authorization.
+            Requires Twitch partnership.
+            Requires channel_commercial.
+            </summary>
+            <param name="length">The length of the commercial</param>
+            <returns>
+            Returns true if the request succeeded.
+            Throws an exception if the user is not partnered.
+            </returns>
+        </member>
+        <member name="M:TwixelAPI.User.RetrieveFollowers(System.Int32,System.Int32,TwixelAPI.Constants.TwitchConstants.Direction)">
+            <summary>
+            Gets a Total object containing a list of Follow objects of type User following the specified user
+            </summary>
+            <param name="offset">Object offset for pagination. Default is 0.</param>
+            <param name="limit">How many users to get at one time. Default is 25. Maximum is 100</param>
+            <param name="direction">Creation date sorting direction. Default is Descending.</param>
+            <returns>A Total object containing a list of Follow objects of type User</returns>
+        </member>
+        <member name="M:TwixelAPI.User.RetrieveFollowing(System.Int32,System.Int32,TwixelAPI.Constants.TwitchConstants.Direction,TwixelAPI.Constants.TwitchConstants.SortBy)">
+            <summary>
+            Gets a Total object containing a list of Follow objects of type Channel this user is following
+            </summary>
+            <param name="offset">Object offset for pagination. Default is 0.</param>
+            <param name="limit">How many channels to get at one time. Default is 25. Maximum is 100</param>
+            <param name="direction">Sorting direction. Default is Decending.</param>
+            <param name="sortBy">Sort by. Default is CreatedAt.</param>
+            <returns>A Total object containing a list of Follow objects of type Channel</returns>
+        </member>
+        <member name="M:TwixelAPI.User.RetrieveFollowing(System.String)">
+            <summary>
+            Checks to see if this user is following a specified channel
+            </summary>
+            <param name="channel">The name of the channel</param>
+            <returns>
+            A Follow object of type Channel if the request succeeded.
+            Throws an exception if the user is not following the specified channel.
+            </returns>
+        </member>
+        <member name="M:TwixelAPI.User.FollowChannel(System.String,System.Boolean)">
+            <summary>
+            Follows a channel.
+            Requires authorization.
+            Requires user_follows_edit.
+            </summary>
+            <param name="channel">The name of the channel</param>
+            <param name="notifications">
+            Whether :user should receive email/push notifications
+            (depending on their notification settings) when the specified channel goes live.
+            Default is false.
+            </param>
+            <returns>
+            A Follow object of type Channel if the request succeeds.
+            Throws an exception if the request was not processed.
+            </returns>
+        </member>
+        <member name="M:TwixelAPI.User.UnfollowChannel(System.String)">
+            <summary>
+            Unfollows a channel.
+            Requires authorization.
+            Requires user_follows_edit.
+            </summary>
+            <param name="channel">The name of the channel</param>
+            <returns>
+            Returns true the request succeeded.
+            Throws an exception if the channel was not being followed.
+            Throws an exception if the channel could not be unfollowed.
+            </returns>
+        </member>
+        <member name="M:TwixelAPI.User.RetriveSubscribers(System.Int32,System.Int32,TwixelAPI.Constants.TwitchConstants.Direction)">
+            <summary>
+            Get a Total object containing a list of Subscription of type User
+            Requires authorization.
+            Requires Twitch partnership.
+            Requires channel_subscriptions.
+            </summary>
+            <param name="offset">Object offset for pagination. Default is 0.</param>
+            <param name="limit">How many subscriptions to get at one time. Default is 25. Maximum is 100</param>
+            <param name="direction">Creation date sorting direction. Default is Ascending.</param>
+            <returns>A Total object containing a list of Subscription objects of type User</returns>
+        </member>
+        <member name="M:TwixelAPI.User.RetrieveSubsciber(System.String)">
+            <summary>
+            Checks to see if a specified user is subscribed to this user.
+            Requires authorization.
+            Requires Twitch partnership.
+            Requires channel_check_subscription.
+            </summary>
+            <param name="username">The name of the user</param>
+            <returns>A Subscription object of type User if the user is subscribed</returns>
+        </member>
+        <member name="M:TwixelAPI.User.RetrieveSubscription(System.String)">
+            <summary>
+            Checks to see if this user is subcribed to a specified channel.
+            Requires authorization.
+            Requires user_subscriptions.
+            </summary>
+            <param name="channel">The name of the channel</param>
+            <returns>
+            A subscription object of type Channel if the request succeeds.
+            Throws an exception if the user is not subscribed to the channel.
+            Throws an exception if the channel is not partnered.</returns>
+        </member>
+        <member name="M:TwixelAPI.User.RetrieveOnlineFollowedStreams(System.Int32,System.Int32)">
+            <summary>
+            Gets a list of live streams that the user is following.
+            Requires authorization.
+            Requires user_read.
+            </summary>
+            <param name="offset">Object offset for pagination. Default is 0.</param>
+            <param name="limit">How many streams to get at once. Default is 25. Maximum is 100.</param>
+            <returns>A list of streams</returns>
+        </member>
+        <member name="M:TwixelAPI.User.RetrieveFollowedVideos(System.Int32,System.Int32)">
+            <summary>
+            Get a list of videos from the channels this user follows
+            </summary>
+            <param name="offset">Object offset for pagination. Default is 0.</param>
+            <param name="limit">How many videos to get at once. Default is 25. Maximum is 100.</param>
+            <returns>A list of videos.</returns>
+        </member>
+        <member name="T:TwixelAPI.Resolution">
+            <summary>
+            Resolution struct
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.Resolution.width">
+            <summary>
+            Width in pixels
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.Resolution.height">
+            <summary>
+            Height in pixels
+            </summary>
+        </member>
+        <member name="M:TwixelAPI.Resolution.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Resolution constructor
+            </summary>
+            <param name="width">Width in pixels</param>
+            <param name="height">Height in pixels</param>
+        </member>
+        <member name="T:TwixelAPI.Video">
+            <summary>
+            Video object
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.Video.title">
+            <summary>
+            Title
+            v2/v3
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.Video.description">
+            <summary>
+            Description
+            v2/v3
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.Video.broadcastId">
+            <summary>
+            Broadcast ID
+            v2/v3
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.Video.status">
+            <summary>
+            Status
+            v2/v3
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.Video.tagList">
+            <summary>
+            Comma seperated string of tags
+            v3
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.Video.id">
+            <summary>
+            ID
+            v2/v3
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.Video.recordedAt">
+            <summary>
+            Recording date
+            v2/v3
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.Video.game">
+            <summary>
+            Game, can be null
+            v2/v3
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.Video.length">
+            <summary>
+            Length in seconds
+            v2/v3
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.Video.preview">
+            <summary>
+            Link to preview image
+            v2/v3
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.Video.url">
+            <summary>
+            Link to video
+            v2/v3
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.Video.embed">
+            <summary>
+            Embed string
+            v2
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.Video.views">
+            <summary>
+            Number of views
+            v2/v3
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.Video.fps">
+            <summary>
+            Quality FPS's
+            Dictionary strings: chunked, high, medium, low, mobile, audio_only
+            v3
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.Video.resolutions">
+            <summary>
+            Quality resolutions.
+            Dictionary strings: chunked, high, medium, low, mobile
+            v3
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.Video.broadcastType">
+            <summary>
+            Broadcast type
+            v2/v3
+            </summary>
+        </member>
+        <member name="F:TwixelAPI.Video.channel">
+            <summary>
+            Channel info
+            Dictionary strings: name, display_name
+            v2/v3
+            </summary>
+        </member>
+        <member name="M:TwixelAPI.Video.#ctor(System.String,System.String,System.Int64,System.String,System.String,System.String,System.String,System.Int64,System.String,System.String,System.String,System.Int64,System.String,Newtonsoft.Json.Linq.JObject,Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            Video constructor, Twitch API v2
+            </summary>
+            <param name="title">Title</param>
+            <param name="description">Description</param>
+            <param name="broadcastId">Broadcast ID</param>
+            <param name="status">Status</param>
+            <param name="id">ID</param>
+            <param name="recordedAt">Recording date</param>
+            <param name="game">Game, can be null</param>
+            <param name="length">Length in seconds</param>
+            <param name="preview">Link to preview image</param>
+            <param name="url">Link to video</param>
+            <param name="embed">Embed string</param>
+            <param name="views">Number of views</param>
+            <param name="broadcastType">Broadcast type</param>
+            <param name="miniChannelO">Mini channel JSON object</param>
+            <param name="baseLinksO">Base links JSON object</param>
+        </member>
+        <member name="M:TwixelAPI.Video.#ctor(System.String,System.String,System.Int64,System.String,System.String,System.String,System.String,System.String,System.Int64,System.String,System.String,System.Int64,System.String,System.String,System.String,Newtonsoft.Json.Linq.JObject,Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            Video constructor, Twitch API v3
+            </summary>
+            <param name="title">Title</param>
+            <param name="description">Description</param>
+            <param name="broadcastId">Broadcast ID</param>
+            <param name="status">Status</param>
+            <param name="tagList">Comma seperated string of tags</param>
+            <param name="id">ID</param>
+            <param name="recordedAt">Recording date</param>
+            <param name="game">Game, can be null</param>
+            <param name="length">Length in seconds</param>
+            <param name="preview">Link to preview image</param>
+            <param name="url">Link to video</param>
+            <param name="views">Number of views</param>
+            <param name="fps">FPS JSON object</param>
+            <param name="resolutions">Resolutions JSON object</param>
+            <param name="broadcastType">Broadcast type</param>
+            <param name="miniChannelO">Mini channel JSON object</param>
+            <param name="baseLinksO">Base links JSON object</param>
+        </member>
+    </members>
+</doc>

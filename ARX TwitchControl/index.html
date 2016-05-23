@@ -1,0 +1,285 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-
+scale=1, user-scalable=no" />
+    <title>TwitchInfo</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        html, body {
+            color: white;
+            margin: 0;
+            padding: 0;
+            font-size: 15px;
+            height: 100%;
+            width: 100%;
+        }
+
+        #header {
+            margin: 0;
+            background-color: darkslateblue;
+            height: auto;
+            width: 100%;
+        }
+
+        nav {
+            background-color: darkslateblue;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+            nav ul {
+                margin: 0;
+                padding: 0;
+            }
+
+                nav ul li {
+                    display: inline-block;
+                    list-style-type: none;
+                    width: 24%;
+                }
+
+            nav > ul > li > a {
+                color: white;
+                background-color: darkslateblue;
+                display: block;
+                font-size: 15px;
+                line-height: 2em;
+                padding: 0.5em 0.5em;
+                text-decoration: none;
+                text-align: center;
+            }
+
+        .content {
+            width: 100%;
+            height: 90%;
+            display: table;
+        }
+
+        .card {
+            margin: auto;
+            margin-top: 10px;
+            background-color: whitesmoke;
+            width: 90%;
+            height: auto;
+        }
+
+        .card_header {
+            background-color: slateblue;
+            padding: 5px;
+            margin-bottom: 5px;
+        }
+
+        .card_content {
+            padding: 5px;
+            color: black;
+        }
+
+        select {
+            background: slateblue;
+            width: 50%;
+            padding: 5px 35px 5px 5px;
+            border: 1px solid darkslateblue;
+            height: 29px;
+            appearance: none;
+            color: white;
+        }
+
+        #chat_messages {
+            font-size: small;
+            padding: 0px;
+            margin: 0px;
+            height:100%;
+        }
+
+            #chat_messages ul {
+                list-style: none;
+                list-style-type:none;
+                padding: 5px;
+                margin: 0px;
+            }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <nav>
+            <ul>
+                <li><a id="stream_button" href="" onclick="loadStream();return false;">Stream</a></li>
+                <li><a id="channel_button" href="" onclick="loadChannel();return false;">Channel</a></li>
+                <li id="subs_li"><a id="subs_button" href="" onclick="loadSubs();return false;">Subs</a></li>
+                <li id="chat_li"><a id="chat_button" href="" onclick="loadChat();return false;">Chat</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div id="stream" class="content">
+        <div id="offline_card" class="card">
+            <div class="card_header">Offline!</div>
+            <div class="card_content">Sorry, but your stream is offline!</div>
+        </div>
+        <div id="game_card" class="card">
+            <div class="card_header">Game</div>
+            <div class="card_content" id="game"></div>
+        </div>
+        <div id="status_card" class="card">
+            <div class="card_header">Status</div>
+            <div class="card_content" id="status"></div>
+        </div>
+        <div id="viewers_card" class="card">
+            <div class="card_header">Viewers</div>
+            <div class="card_content" id="viewers"></div>
+        </div>
+        <div id="video_quality_card" class="card">
+            <div class="card_header">Video Quality</div>
+            <div class="card_content" id="video_quality"></div>
+        </div>
+        <div id="average_fps_card" class="card">
+            <div class="card_header">Average FPS</div>
+            <div class="card_content" id="average_fps"></div>
+        </div>
+        <div id="delay_card" class="card">
+            <div class="card_header">Delay</div>
+            <div class="card_content" id="delay"></div>
+        </div>
+        <div id="commercial_card" class="card">
+            <div class="card_header">Commercial</div>
+            <div class="card_content">
+                <button id="makeCommercial30">Start 30 sec</button>
+                <button id="makeCommercial60">Start 60 sec</button>
+                <button id="makeCommercial90">Start 90 sec</button>
+                <button id="makeCommercial120">Start 120 sec</button>
+                <button id="makeCommercial150">Start 150 sec</button>
+                <button id="makeCommercial180">Start 180 sec</button>
+            </div>
+        </div>
+    </div>
+    <div id="channel" class="content">
+        <div id="channel_views_card" class="card">
+            <div class="card_header">Channel Views</div>
+            <div class="card_content" id="channel_views"></div>
+        </div>
+        <div id="follower_card" class="card">
+            <div class="card_header">Followers</div>
+            <div class="card_content" id="followers"></div>
+        </div>
+        <div id="mature_card" class="card">
+            <div class="card_header">Mature</div>
+            <div class="card_content" id="mature"></div>
+        </div>
+    </div>
+    <div id="subs" class="content">
+        <div id="last_subs_card" class="card">
+            <div class="card_header">Last 25 Subs</div>
+            <div class="card_content" id="last_subs"></div>
+        </div>
+    </div>
+    <div id="chat" class="content">
+        <div id="chat_card" class="card">
+            <div class="card_header">Chat</div>
+            <div class="card_content" id="chat_messages"></div>
+        </div>
+    </div>
+    <br style="clear:both;" />
+    <script type="text/javascript">
+        var onACBridgeLoad = function () {
+            console.log("ACBrigdeLoad call start");
+            loadStream();
+            checkIfTablet();
+            checkIfPartner();
+            console.log("ACBrigdeLoad call end");
+        }
+
+        onPropertyUpdate = function () {
+            checkIfPartner();
+            if ($('#status').text().indexOf("Stream offline!") >= 0) {
+                console.info("Stream is online");
+                $('#offline_card').show();
+                $('#game_card').hide();
+                $('#status_card').hide();
+                $('#viewers_card').hide();
+                $('#video_quality_card').hide();
+                $('#average_fps_card').hide();
+                $('#delay_card').hide();
+            } else {
+                console.info("Stream is offline");
+                $('#offline_card').hide();
+                $('#game_card').show();
+                $('#status_card').show();
+                $('#viewers_card').show();
+                $('#video_quality_card').show();
+                $('#average_fps_card').show();
+                $('#delay_card').show();
+            }
+        }
+
+        function loadStream() {
+            $("#channel").hide();
+            $("#subs").hide();
+            $("#stream").show();
+            $("#stream_button").css("background-color", "slateblue");
+            $("#channel_button").css("background-color", "darkslateblue");
+            $("#subs_button").css("background-color", "darkslateblue");
+            if ($(document).width() < $(document).height()) {
+                $("#chat").hide();
+                $("#chat_button").css("background-color", "darkslateblue");
+            }
+        }
+        function loadChat() {
+            $("#stream").hide();
+            $("#channel").hide();
+            $("#subs").hide();
+            $("#chat").show();
+            $("#chat_button").css("background-color", "slateblue");
+            $("#stream_button").css("background-color", "darkslateblue");
+            $("#channel_button").css("background-color", "darkslateblue");
+            $("#subs_button").css("background-color", "darkslateblue");
+        }
+        function loadSubs() {
+            $("#channel").hide();
+            $("#stream").hide();
+            $("#subs").show();
+            $("#subs_button").css("background-color", "slateblue");
+            $("#channel_button").css("background-color", "darkslateblue");
+            $("#stream_button").css("background-color", "darkslateblue");
+            if ($(document).width() < $(document).height()) {
+                $("#chat").hide();
+                $("#chat_button").css("background-color", "darkslateblue");
+            }
+        }
+        function loadChannel() {
+            $("#stream").hide();
+            $("#subs").hide();
+            $("#channel").show();
+            $("#channel_button").css("background-color", "slateblue");
+            $("#stream_button").css("background-color", "darkslateblue");
+            $("#subs_button").css("background-color", "darkslateblue");
+            if ($(document).width() < $(document).height()) {
+                $("#chat").hide();
+                $("#chat_button").css("background-color", "darkslateblue");
+            }
+        }
+        function checkIfTablet() {
+            if ($(document).width() > $(document).height()) {
+                $("#chat_li").hide();
+                $("#chat").show();
+                $(".content").css("width", "50%");
+                $(".content").css("float", "left");
+                $("#chat").css("float", "right");
+            }
+            else {
+                $("#chat_li").show();
+                $("#chat").hide();
+                $("#chat").css("float", "none");
+                $(".content").css("width", "100%");
+            }
+        }
+        function checkIfPartner() {
+            if ($('#last_subs').text().indexOf("No partner") >= 0) {
+                $("#subs_li").hide();
+            } else {
+                $("#subs_li").show();
+            }
+        }
+    </script>
+</body>
+</html>
